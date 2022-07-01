@@ -35,6 +35,10 @@ import re
 import pandas as pd
 
 
+"""
+https://www.pexels.com/ru-ru/search/videos/happy/
+"""
+
 url = 'https://www.pexels.com/video/people-in-a-party-raising-their-glasses-for-a-toss-while-confetti-are-falling-3188991/'
 
 
@@ -118,7 +122,15 @@ ddd = json.loads(script_)
 
 id_ = ddd['props']['pageProps']['medium']['attributes']['id']
 description_ = ddd['props']['pageProps']['medium']['attributes']['description']
+
 width_ = ddd['props']['pageProps']['medium']['attributes']['width']
+height_ = ddd['props']['pageProps']['medium']['attributes']['height']
+
+if int(width_) > int(height_):
+    orientations_ = 'Horizontal'
+else:
+    orientations_ = 'Vertical'
+
 title_ = ddd['props']['pageProps']['medium']['attributes']['title']
 tags_ = ddd['props']['pageProps']['medium']['attributes']['tags']
 
@@ -128,7 +140,10 @@ duration_ = ddd['props']['pageProps']['mediumDetails']['attributes']['duration']
 license_ = ddd['props']['pageProps']['__namespaces']['medium']['license']
 
 print(title_)
-
+print(f'{width_} x {height_}')
+print(orientations_)
+print(fps_)
+print(f'{duration_} sec')
 print(license_)
 print(tags_)
 
