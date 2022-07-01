@@ -139,6 +139,7 @@ duration_ = ddd['props']['pageProps']['mediumDetails']['attributes']['duration']
 
 license_ = ddd['props']['pageProps']['__namespaces']['medium']['license']
 
+
 print(title_)
 print(f'{width_} x {height_}')
 print(orientations_)
